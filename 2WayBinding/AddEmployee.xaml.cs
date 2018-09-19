@@ -13,23 +13,34 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace _2WayBinding
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class AddEmployee : Page
     {
-        public MainPage()
+        public AddEmployee()
         {
             this.InitializeComponent();
         }
 
-        private void Add_Employee(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(AddEmployee));
+            var employee = new Employee()
+            {
+                Name = nameText.Text,
+                Title = titleText.Text
+
+            };
+            Employee.WriteEmployee(employee);
+        }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MainPage));
         }
     }
 }

@@ -8,7 +8,21 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    
+        <Grid>
+            <StackPanel Orientation="Horizontal" Margin="183,198,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <TextBlock Text="Name: " Margin="10" Width="100"/>
+                <TextBlock Text="{Binding Name}" Margin="10" Width="100"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="183,250,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <TextBlock Text="Title: " Margin="10" Width="100"/>
+                <TextBlock Text="{Binding Title}" Margin="10" Width="100"/>
+            </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="183,350,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Button Content="Add Employee" Click="Add_Employee" Margin="50,20,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </StackPanel>
+
 
     </Grid>
 </Page>
