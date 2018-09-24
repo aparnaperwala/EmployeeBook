@@ -25,11 +25,27 @@ namespace _2WayBinding
         public MainPage()
         {
             this.InitializeComponent();
+            
         }
+       // protected async override void OnNavigatedTo(NavigationEventArgs e)
+        //{
+          //  base.OnNavigatedTo(e);
+            //DataContext = await Employee.GetEmployees();
+        //}
 
         private void Add_Employee(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(AddEmployee));
+        }
+
+        private async void Display_Employees(object sender, RoutedEventArgs e)
+        {
+            DataContext = await Employee.GetEmployees();
+        }
+        
+        private void Delete_Employee(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(DeleteEmployee));
         }
     }
 }

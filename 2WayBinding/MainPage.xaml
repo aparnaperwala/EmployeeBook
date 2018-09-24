@@ -10,17 +10,21 @@
 
     
         <Grid>
-            <StackPanel Orientation="Horizontal" Margin="183,198,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                <TextBlock Text="Name: " Margin="10" Width="100"/>
-                <TextBlock Text="{Binding Name}" Margin="10" Width="100"/>
-            </StackPanel>
-
-            <StackPanel Orientation="Horizontal" Margin="183,250,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                <TextBlock Text="Title: " Margin="10" Width="100"/>
-                <TextBlock Text="{Binding Title}" Margin="10" Width="100"/>
-            </StackPanel>
-        <StackPanel Orientation="Horizontal" Margin="183,350,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <GridView Name= "Employees" ItemsSource= "{Binding}" Height="300" Width="400" Margin="50">
+            <GridView.ItemTemplate>
+                <DataTemplate x:DataType="local:Employee">
+                    <StackPanel Orientation="Horizontal" Margin="2" >
+                        <TextBlock Text="{x:Bind Name}" Width="95" Margin="2" />
+                        <TextBlock Text="{x:Bind Title}" Width="95" Margin="2" x:Phase="1"/>
+                    </StackPanel>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+            
+        </GridView> 
+        <StackPanel Orientation="Horizontal" Margin="50" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Button Content="Add Employee" Click="Add_Employee" Margin="50,20,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Button Content="Display Employees" Click="Display_Employees" Margin="50,20,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Button Content="Delete Employee" Click="Delete_Employee" Margin="50,20,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         </StackPanel>
 
 
